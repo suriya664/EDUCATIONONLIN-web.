@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - EduMaster</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="container">
+            <div class="row justify-content-center align-items-center py-5">
+                <div class="col-lg-6 col-md-8">
+                    <div class="auth-card card shadow-lg border-0">
+                        <div class="card-body p-5">
+                            <div class="text-center mb-4">
+                                <a href="index.html" class="navbar-brand fw-bold d-inline-block mb-3" style="font-size: 2rem;">
+                                    <i class="bi bi-mortarboard-fill text-primary"></i> EduMaster
+                                </a>
+                                <h2 class="fw-bold mb-2">Create Your Account</h2>
+                                <p class="text-muted">Join thousands of learners and start your journey today</p>
+                            </div>
+                            
+                            <!-- Tab Navigation -->
+                            <ul class="nav nav-pills nav-fill mb-4" id="signupTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="student-signup-tab" data-bs-toggle="tab" data-bs-target="#student-signup" type="button">
+                                        <i class="bi bi-person me-2"></i>Student
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="instructor-signup-tab" data-bs-toggle="tab" data-bs-target="#instructor-signup" type="button">
+                                        <i class="bi bi-mortarboard me-2"></i>Instructor
+                                    </button>
+                                </li>
+                            </ul>
+
+                            <!-- Tab Content -->
+                            <div class="tab-content" id="signupTabContent">
+                                <!-- Student Signup -->
+                                <div class="tab-pane fade show active" id="student-signup" role="tabpanel">
+                                    <form id="studentSignupForm">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label">First Name</label>
+                                                <input type="text" class="form-control" placeholder="John" required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label">Last Name</label>
+                                                <input type="text" class="form-control" placeholder="Doe" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Email Address</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                                <input type="email" class="form-control" placeholder="student@example.com" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Password</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                                <input type="password" class="form-control" id="studentSignupPassword" placeholder="Create a strong password" required>
+                                                <button class="btn btn-outline-secondary" type="button" id="toggleStudentSignupPassword">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                            </div>
+                                            <div class="form-text">Must be at least 8 characters with letters and numbers</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Confirm Password</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                                                <input type="password" class="form-control" placeholder="Confirm your password" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                            <label class="form-check-label" for="agreeTerms">
+                                                I agree to the <a href="terms.html" class="text-decoration-none">Terms & Conditions</a> and <a href="privacy.html" class="text-decoration-none">Privacy Policy</a>
+                                            </label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100 mb-3">Create Account</button>
+                                        <div class="text-center">
+                                            <p class="mb-0">Already have an account? <a href="login.html" class="text-decoration-none fw-bold">Sign In</a></p>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <!-- Instructor Signup -->
+                                <div class="tab-pane fade" id="instructor-signup" role="tabpanel">
+                                    <form id="instructorSignupForm">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label">First Name</label>
+                                                <input type="text" class="form-control" placeholder="Jane" required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label">Last Name</label>
+                                                <input type="text" class="form-control" placeholder="Smith" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Email Address</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                                <input type="email" class="form-control" placeholder="instructor@example.com" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Professional Title</label>
+                                            <input type="text" class="form-control" placeholder="e.g., Senior Developer, Design Lead" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Biography</label>
+                                            <textarea class="form-control" rows="3" placeholder="Tell us about your experience and expertise..." required></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Password</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                                <input type="password" class="form-control" id="instructorSignupPassword" placeholder="Create a strong password" required>
+                                                <button class="btn btn-outline-secondary" type="button" id="toggleInstructorSignupPassword">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Confirm Password</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                                                <input type="password" class="form-control" placeholder="Confirm your password" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="agreeTermsInstructor" required>
+                                            <label class="form-check-label" for="agreeTermsInstructor">
+                                                I agree to the <a href="terms.html" class="text-decoration-none">Terms & Conditions</a> and <a href="privacy.html" class="text-decoration-none">Privacy Policy</a>
+                                            </label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100 mb-3">Create Instructor Account</button>
+                                        <div class="text-center">
+                                            <p class="mb-0">Already have an account? <a href="login.html" class="text-decoration-none fw-bold">Sign In</a></p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="index.html" class="text-decoration-none">
+                            <i class="bi bi-arrow-left me-1"></i>Back to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Detail - EduMaster</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/course-detail.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-mortarboard-fill text-primary"></i> EduMaster</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="cart.html" class="btn btn-link position-relative me-3">
+                        <i class="bi bi-cart3 fs-5"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">0</span>
+                    </a>
+                    <a href="login.html" class="btn btn-outline-primary">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Detail Section -->
+    <section class="course-detail-section py-5" style="margin-top: 76px;">
+        <div class="container">
+            <div class="row">
+                <!-- Main Content -->
+                <div class="col-lg-8">
+                    <!-- Course Header -->
+                    <div class="course-header card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2" id="courseCategory">Web Development</span>
+                            <h1 class="fw-bold mb-3" id="courseTitle">Complete Web Development Bootcamp</h1>
+                            <p class="lead text-muted mb-3" id="courseSubtitle">Learn Web Development by building 50+ projects using HTML, CSS, JavaScript, React, Node, MongoDB and more!</p>
+                        <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="text-warning fw-bold me-1" id="courseRating">4.7</span>
+                                <div class="rating" id="courseStars"></div>
+                                <span class="text-muted ms-2">(<span id="reviewCount">15,234</span> ratings)</span>
+                            </div>
+                            <span class="text-muted"><i class="bi bi-people me-1"></i><span id="studentCount">125,000</span> students</span>
+                            <span class="text-muted"><i class="bi bi-clock me-1"></i><span id="courseDuration">55 hours</span></span>
+                            <span class="text-muted"><i class="bi bi-bar-chart me-1"></i><span id="courseLevel">Beginner</span></span>
+                            <span class="text-muted"><i class="bi bi-globe me-1"></i>English</span>
+                        </div>
+                            <div class="d-flex align-items-center">
+                                <img src="https://ui-avatars.com/api/?name=Angela+Yu&size=50" alt="Instructor" class="rounded-circle me-2">
+                                <div>
+                                    <p class="mb-0 fw-bold">Created by <a href="#" id="instructorName">Angela Yu</a></p>
+                                    <small class="text-muted">Last updated <span id="lastUpdated">12/2024</span></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Preview Video -->
+                    <div class="preview-video mb-4">
+                        <div class="ratio ratio-16x9">
+                            <iframe id="previewVideo" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Course Tabs -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <ul class="nav nav-tabs mb-3" id="courseTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button">Overview</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#curriculum" type="button">Curriculum</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="instructor-tab" data-bs-toggle="tab" data-bs-target="#instructor" type="button">Instructor</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button">Reviews</button>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content" id="courseTabContent">
+                        <!-- Overview Tab -->
+                        <div class="tab-pane fade show active" id="overview" role="tabpanel">
+                            <div class="course-description">
+                                <h4 class="fw-bold mb-3">What you'll learn</h4>
+                                <div class="row mb-4">
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Build 16 web development projects for your portfolio</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Work as a freelance web developer</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Master frontend development with React</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Learn backend development with Node</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Master MongoDB database</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Learn authentication & security</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Learn to use Git, GitHub, Node.js, NPM</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Create a blog application from scratch</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <h4 class="fw-bold mb-3">Course Description</h4>
+                                <p id="courseDescription">This comprehensive course will take you from absolute beginner to confident web developer. You'll learn HTML, CSS, JavaScript, React, Node.js, MongoDB and much more through hands-on projects.</p>
+                            </div>
+                        </div>
+
+                        <!-- Curriculum Tab -->
+                        <div class="tab-pane fade" id="curriculum" role="tabpanel">
+                            <div class="curriculum-content">
+                                <div class="accordion" id="curriculumAccordion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#section1">
+                                                Section 1: Introduction (5 lectures, 45 min)
+                                            </button>
+                                        </h2>
+                                        <div id="section1" class="accordion-collapse collapse show" data-bs-parent="#curriculumAccordion">
+                                            <div class="accordion-body">
+                                                <ul class="list-unstyled">
+                                                    <li class="mb-2"><i class="bi bi-play-circle me-2"></i>Course Introduction (8:30)</li>
+                                                    <li class="mb-2"><i class="bi bi-play-circle me-2"></i>How to Get Help (5:15)</li>
+                                                    <li class="mb-2"><i class="bi bi-play-circle me-2"></i>Course Resources (10:00)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#section2">
+                                                Section 2: HTML Fundamentals (12 lectures, 2 hours)
+                                            </button>
+                                        </h2>
+                                        <div id="section2" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                            <div class="accordion-body">
+                                                <ul class="list-unstyled">
+                                                    <li class="mb-2"><i class="bi bi-play-circle me-2"></i>HTML Basics (15:20)</li>
+                                                    <li class="mb-2"><i class="bi bi-play-circle me-2"></i>HTML Forms (20:10)</li>
+                                                    <li class="mb-2"><i class="bi bi-play-circle me-2"></i>HTML5 Semantic Elements (18:45)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#section3">
+                                                Section 3: CSS Styling (15 lectures, 3 hours)
+                                            </button>
+                                        </h2>
+                                        <div id="section3" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                            <div class="accordion-body">
+                                                <ul class="list-unstyled">
+                                                    <li class="mb-2"><i class="bi bi-play-circle me-2"></i>CSS Basics (22:30)</li>
+                                                    <li class="mb-2"><i class="bi bi-play-circle me-2"></i>CSS Flexbox (25:15)</li>
+                                                    <li class="mb-2"><i class="bi bi-play-circle me-2"></i>CSS Grid (28:00)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Instructor Tab -->
+                        <div class="tab-pane fade" id="instructor" role="tabpanel">
+                            <div class="instructor-detail">
+                                <div class="d-flex align-items-start mb-4">
+                                    <img src="https://ui-avatars.com/api/?name=Angela+Yu&size=150" alt="Instructor" class="rounded-circle me-4">
+                                    <div>
+                                        <h4 class="fw-bold mb-2">Angela Yu</h4>
+                                        <p class="text-muted mb-3">Lead Instructor at EduMaster</p>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <span class="text-warning fw-bold me-2">4.8</span>
+                                            <div class="rating me-2"></div>
+                                            <span class="text-muted">Instructor Rating</span>
+                                            <span class="ms-4 text-muted"><i class="bi bi-people me-1"></i>1,250,000 Students</span>
+                                            <span class="ms-4 text-muted"><i class="bi bi-book me-1"></i>12 Courses</span>
+                                        </div>
+                                        <p>Angela is a developer with a passion for teaching. She's been the lead instructor at the London App Brewery, London's leading Programming Bootcamp, and has helped hundreds of thousands of students learn to code and change their lives by becoming a developer.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reviews Tab -->
+                        <div class="tab-pane fade" id="reviews" role="tabpanel">
+                            <div class="reviews-section">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h4 class="fw-bold mb-0">Student Reviews</h4>
+                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reviewModal">Write a Review</button>
+                                </div>
+                                <div id="reviewsList">
+                                    <!-- Reviews will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <div class="sticky-top" style="top: 100px;">
+                        <div class="course-sidebar card border-0 shadow-lg">
+                            <div class="card-body p-4">
+                                <div class="course-image mb-3">
+                                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400" alt="Course" class="img-fluid rounded">
+                                </div>
+                                <div class="price-section mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <span class="h3 fw-bold text-primary mb-0" id="coursePrice">$89.99</span>
+                                        <span class="text-muted text-decoration-line-through ms-2" id="originalPrice">$199.99</span>
+                                        <span class="badge bg-danger ms-2" id="discountBadge">55% OFF</span>
+                                    </div>
+                                </div>
+                                <div class="d-grid gap-2 mb-3">
+                                    <button class="btn btn-primary btn-lg" id="enrollBtn">
+                                        <i class="bi bi-cart-plus me-2"></i>Add to Cart
+                                    </button>
+                                    <button class="btn btn-outline-danger" id="wishlistBtn">
+                                        <i class="bi bi-heart me-2"></i>Add to Wishlist
+                                    </button>
+                                </div>
+                                <div class="course-includes mb-3">
+                                    <h6 class="fw-bold mb-3">This course includes:</h6>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="bi bi-play-circle-fill text-primary me-2"></i>55 hours on-demand video</li>
+                                        <li class="mb-2"><i class="bi bi-file-text text-primary me-2"></i>50 downloadable resources</li>
+                                        <li class="mb-2"><i class="bi bi-infinity text-primary me-2"></i>Full lifetime access</li>
+                                        <li class="mb-2"><i class="bi bi-phone text-primary me-2"></i>Access on mobile and TV</li>
+                                        <li class="mb-2"><i class="bi bi-award text-primary me-2"></i>Certificate of completion</li>
+                                    </ul>
+                                </div>
+                                <div class="text-center">
+                                    <a href="#" class="text-decoration-none">Share this course</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Modal -->
+    <div class="modal fade" id="reviewModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Write a Review</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="reviewForm">
+                        <div class="mb-3">
+                            <label class="form-label">Rating</label>
+                            <div class="rating-input">
+                                <i class="bi bi-star fs-3 text-warning" data-rating="1"></i>
+                                <i class="bi bi-star fs-3 text-warning" data-rating="2"></i>
+                                <i class="bi bi-star fs-3 text-warning" data-rating="3"></i>
+                                <i class="bi bi-star fs-3 text-warning" data-rating="4"></i>
+                                <i class="bi bi-star fs-3 text-warning" data-rating="5"></i>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Review Title</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Your Review</label>
+                            <textarea class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit Review</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center text-muted">
+                    <p class="mb-0">&copy; 2025 EduMaster. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Load courses data first if available -->
+    <script>
+        // Ensure coursesData is available
+        if (!window.coursesData) {
+            window.coursesData = [];
+        }
+    </script>
+    <script src="js/app.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/course-detail.js"></script>
+</body>
+</html>

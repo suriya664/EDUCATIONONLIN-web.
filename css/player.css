@@ -1,0 +1,51 @@
+/* Video Player Styles */
+.player-container {
+    height: calc(100vh - 56px);
+    overflow: hidden;
+}
+
+.video-container {
+    height: calc(100vh - 56px);
+    display: flex;
+    flex-direction: column;
+}
+
+.video-container video {
+    height: calc(100vh - 56px - 80px);
+}
+
+.sidebar-lectures {
+    height: calc(100vh - 56px);
+    overflow-y: auto;
+}
+
+.course-info {
+    max-height: 40vh;
+    overflow-y: auto;
+}
+
+.lecture-item {
+    border: none !important;
+    padding: 0.75rem 1rem !important;
+    transition: all 0.3s ease;
+}
+
+.lecture-item:hover {
+    background: rgba(99, 102, 241, 0.1) !important;
+}
+
+.lecture-item.active {
+    background: rgba(99, 102, 241, 0.2) !important;
+    border-left: 3px solid var(--primary-color) !important;
+}
+
+.accordion-button {
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+}
+
+.accordion-button:not(.collapsed) {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary-color);
+}
+

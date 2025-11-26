@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - EduMaster</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-mortarboard-fill text-primary"></i> EduMaster</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="student-dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="profile.html">Profile</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="cart.html" class="btn btn-link position-relative me-3">
+                        <i class="bi bi-cart3 fs-5"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">0</span>
+                    </a>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle me-1"></i> Student
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                            <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="index.html">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <div class="profile-container">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-lg-3 sidebar bg-light border-end">
+                    <div class="sidebar-content p-4">
+                        <div class="user-profile text-center mb-4">
+                            <div class="position-relative d-inline-block">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe&size=120&background=6366f1&color=fff" alt="Profile" class="rounded-circle mb-3 profile-image" id="profileImage">
+                                <label for="imageUpload" class="btn btn-sm btn-primary rounded-circle position-absolute bottom-0 end-0" style="width: 36px; height: 36px; padding: 0;">
+                                    <i class="bi bi-camera"></i>
+                                </label>
+                                <input type="file" id="imageUpload" class="d-none" accept="image/*">
+                            </div>
+                            <h4 class="fw-bold mb-1" id="profileName">John Doe</h4>
+                            <p class="text-muted small mb-2">Student</p>
+                            <p class="text-muted small mb-3">Member since January 2024</p>
+                            <a href="student-dashboard.html" class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-arrow-left me-1"></i>Back to Dashboard
+                            </a>
+                        </div>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2">
+                                <a class="nav-link active" href="#overview" data-tab="overview">
+                                    <i class="bi bi-person me-2"></i>Overview
+                                </a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a class="nav-link" href="#edit-profile" data-tab="edit-profile">
+                                    <i class="bi bi-pencil me-2"></i>Edit Profile
+                                </a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a class="nav-link" href="#achievements" data-tab="achievements">
+                                    <i class="bi bi-trophy me-2"></i>Achievements
+                                </a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a class="nav-link" href="#activity" data-tab="activity">
+                                    <i class="bi bi-clock-history me-2"></i>Activity
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                    <div class="profile-content p-4">
+                        <!-- Tab Content -->
+                        <div id="profileTabs">
+                            <!-- Overview Tab -->
+                            <div class="tab-pane active" id="overview">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h3 class="fw-bold mb-0">Profile Overview</h3>
+                                    <button class="btn btn-primary" onclick="switchTab('edit-profile')">
+                                        <i class="bi bi-pencil me-2"></i>Edit Profile
+                                    </button>
+                                </div>
+
+                                <!-- Stats Cards -->
+                                <div class="row g-4 mb-4">
+                                    <div class="col-md-3">
+                                        <div class="stat-card card border-0 shadow-sm text-center p-4">
+                                            <i class="bi bi-book fs-1 text-primary mb-2"></i>
+                                            <h3 class="fw-bold mb-1">5</h3>
+                                            <p class="text-muted mb-0">Enrolled Courses</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="stat-card card border-0 shadow-sm text-center p-4">
+                                            <i class="bi bi-check-circle fs-1 text-success mb-2"></i>
+                                            <h3 class="fw-bold mb-1">3</h3>
+                                            <p class="text-muted mb-0">Completed</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="stat-card card border-0 shadow-sm text-center p-4">
+                                            <i class="bi bi-trophy fs-1 text-warning mb-2"></i>
+                                            <h3 class="fw-bold mb-1">2</h3>
+                                            <p class="text-muted mb-0">Certificates</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="stat-card card border-0 shadow-sm text-center p-4">
+                                            <i class="bi bi-clock fs-1 text-info mb-2"></i>
+                                            <h3 class="fw-bold mb-1">24h</h3>
+                                            <p class="text-muted mb-0">Study Hours</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Profile Information -->
+                                <div class="row g-4">
+                                    <div class="col-md-8">
+                                        <div class="card border-0 shadow-sm">
+                                            <div class="card-body p-4">
+                                                <h5 class="fw-bold mb-4">Personal Information</h5>
+                                                <div class="row mb-3">
+                                                    <div class="col-sm-4 text-muted">Full Name:</div>
+                                                    <div class="col-sm-8 fw-medium" id="displayName">John Doe</div>
+                                                </div>
+                                                <hr>
+                                                <div class="row mb-3">
+                                                    <div class="col-sm-4 text-muted">Email:</div>
+                                                    <div class="col-sm-8 fw-medium" id="displayEmail">john.doe@example.com</div>
+                                                </div>
+                                                <hr>
+                                                <div class="row mb-3">
+                                                    <div class="col-sm-4 text-muted">Phone:</div>
+                                                    <div class="col-sm-8 fw-medium" id="displayPhone">+1 (555) 123-4567</div>
+                                                </div>
+                                                <hr>
+                                                <div class="row mb-3">
+                                                    <div class="col-sm-4 text-muted">Location:</div>
+                                                    <div class="col-sm-8 fw-medium" id="displayLocation">New York, USA</div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-sm-4 text-muted">Bio:</div>
+                                                    <div class="col-sm-8" id="displayBio">
+                                                        Student passionate about learning new skills and advancing my career through quality online education.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card border-0 shadow-sm">
+                                            <div class="card-body p-4">
+                                                <h5 class="fw-bold mb-4">Quick Links</h5>
+                                                <div class="d-grid gap-2">
+                                                    <a href="student-dashboard.html" class="btn btn-outline-primary">
+                                                        <i class="bi bi-speedometer2 me-2"></i>My Dashboard
+                                                    </a>
+                                                    <a href="courses.html" class="btn btn-outline-primary">
+                                                        <i class="bi bi-book me-2"></i>Browse Courses
+                                                    </a>
+                                                    <a href="#certificates" class="btn btn-outline-primary">
+                                                        <i class="bi bi-award me-2"></i>My Certificates
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Edit Profile Tab -->
+                            <div class="tab-pane d-none" id="edit-profile">
+                                <h3 class="fw-bold mb-4">Edit Profile</h3>
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <form id="profileForm">
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">First Name</label>
+                                                    <input type="text" class="form-control" id="firstName" value="John" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Last Name</label>
+                                                    <input type="text" class="form-control" id="lastName" value="Doe" required>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Email Address</label>
+                                                <input type="email" class="form-control" id="email" value="john.doe@example.com" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Phone Number</label>
+                                                <input type="tel" class="form-control" id="phone" value="+1 (555) 123-4567">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Location</label>
+                                                <input type="text" class="form-control" id="location" value="New York, USA">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Bio</label>
+                                                <textarea class="form-control" id="bio" rows="4" placeholder="Tell us about yourself...">Student passionate about learning new skills and advancing my career through quality online education.</textarea>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Date of Birth</label>
+                                                <input type="date" class="form-control" id="dob" value="1995-05-15">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Gender</label>
+                                                <select class="form-select" id="gender">
+                                                    <option value="male" selected>Male</option>
+                                                    <option value="female">Female</option>
+                                                    <option value="other">Other</option>
+                                                    <option value="prefer-not-to-say">Prefer not to say</option>
+                                                </select>
+                                            </div>
+                                            <div class="d-flex gap-2">
+                                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                <button type="button" class="btn btn-outline-secondary" onclick="switchTab('overview')">Cancel</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Achievements Tab -->
+                            <div class="tab-pane d-none" id="achievements">
+                                <h3 class="fw-bold mb-4">Achievements & Badges</h3>
+                                <div class="row g-4">
+                                    <div class="col-md-4">
+                                        <div class="card border-0 shadow-sm text-center p-4 achievement-card">
+                                            <i class="bi bi-trophy-fill fs-1 text-warning mb-3"></i>
+                                            <h5 class="fw-bold">First Course</h5>
+                                            <p class="text-muted small">Completed your first course</p>
+                                            <span class="badge bg-success">Earned</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card border-0 shadow-sm text-center p-4 achievement-card">
+                                            <i class="bi bi-star-fill fs-1 text-warning mb-3"></i>
+                                            <h5 class="fw-bold">Quick Learner</h5>
+                                            <p class="text-muted small">Complete 3 courses in a month</p>
+                                            <span class="badge bg-success">Earned</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card border-0 shadow-sm text-center p-4 achievement-card">
+                                            <i class="bi bi-fire fs-1 text-danger mb-3"></i>
+                                            <h5 class="fw-bold">On Fire</h5>
+                                            <p class="text-muted small">Study 7 days in a row</p>
+                                            <span class="badge bg-secondary">Locked</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Activity Tab -->
+                            <div class="tab-pane d-none" id="activity">
+                                <h3 class="fw-bold mb-4">Recent Activity</h3>
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <div class="activity-item mb-3 pb-3 border-bottom">
+                                            <div class="d-flex align-items-center">
+                                                <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-1">Completed course: Web Development Bootcamp</h6>
+                                                    <small class="text-muted">2 days ago</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="activity-item mb-3 pb-3 border-bottom">
+                                            <div class="d-flex align-items-center">
+                                                <i class="bi bi-book-fill text-primary me-3 fs-5"></i>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-1">Enrolled in: Advanced JavaScript</h6>
+                                                    <small class="text-muted">5 days ago</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="activity-item mb-3 pb-3 border-bottom">
+                                            <div class="d-flex align-items-center">
+                                                <i class="bi bi-award-fill text-warning me-3 fs-5"></i>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-1">Earned certificate: Python Programming</h6>
+                                                    <small class="text-muted">1 week ago</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="activity-item">
+                                            <div class="d-flex align-items-center">
+                                                <i class="bi bi-heart-fill text-danger me-3 fs-5"></i>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-1">Added to wishlist: React Masterclass</h6>
+                                                    <small class="text-muted">2 weeks ago</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

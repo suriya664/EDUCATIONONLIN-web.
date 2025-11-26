@@ -1,0 +1,97 @@
+/* Settings Page Styles */
+.settings-container {
+    min-height: calc(100vh - 76px);
+    background: #f9fafb;
+    padding-top: 76px;
+}
+
+.settings-content {
+    min-height: calc(100vh - 76px);
+}
+
+.settings-nav .nav-link {
+    transition: all 0.3s ease;
+}
+
+.settings-nav .nav-link.active {
+    background: var(--gradient);
+    color: white;
+}
+
+.settings-section {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.session-item {
+    transition: all 0.3s ease;
+}
+
+.session-item:hover {
+    background: #f8f9fa;
+}
+
+.payment-method-item {
+    transition: all 0.3s ease;
+}
+
+.payment-method-item:hover {
+    background: #f8f9fa;
+}
+
+.theme-option {
+    flex: 1;
+}
+
+.theme-option label {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.theme-option .btn-check:checked + label {
+    background: var(--gradient);
+    border-color: transparent;
+    color: white;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.form-check-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .settings-container {
+        padding-top: 76px;
+    }
+    
+    .sidebar {
+        position: relative;
+        min-height: auto;
+    }
+    
+    .settings-content {
+        padding: 1rem;
+    }
+    
+    .theme-option {
+        margin-bottom: 1rem;
+    }
+}

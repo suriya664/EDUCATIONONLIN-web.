@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduMaster - Online Learning Platform</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-mortarboard-fill text-primary"></i> EduMaster
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" data-bs-toggle="dropdown">
+                            Courses
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="courses.html">All Courses</a></li>
+                            <li><a class="dropdown-item" href="courses.html?category=web">Web Development</a></li>
+                            <li><a class="dropdown-item" href="courses.html?category=design">Design</a></li>
+                            <li><a class="dropdown-item" href="courses.html?category=business">Business</a></li>
+                            <li><a class="dropdown-item" href="courses.html?category=marketing">Marketing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="instructors.html">Instructors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="cart.html" class="btn btn-link position-relative me-3">
+                        <i class="bi bi-cart3 fs-5"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">0</span>
+                    </a>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle me-1"></i> Account
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="student-dashboard.html">My Dashboard</a></li>
+                            <li><a class="dropdown-item" href="instructor-dashboard.html">Instructor Dashboard</a></li>
+                            <li><a class="dropdown-item" href="admin-dashboard.html">Admin Panel</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="login.html">Login</a></li>
+                            <li><a class="dropdown-item" href="signup.html">Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100 py-5">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Learn Without Limits</h1>
+                    <p class="lead mb-4">Start, switch, or advance your career with thousands of courses, Professional Certificates, and degrees from world-class instructors.</p>
+                    
+                    <!-- Search Bar -->
+                    <div class="search-container mb-4">
+                        <div class="input-group input-group-lg">
+                            <input type="text" class="form-control" placeholder="What do you want to learn today?" id="courseSearch">
+                            <button class="btn btn-primary" type="button">
+                                <i class="bi bi-search me-2"></i>Search
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Featured Categories -->
+                    <div class="categories-pills">
+                        <span class="badge bg-light text-dark me-2 mb-2">Web Development</span>
+                        <span class="badge bg-light text-dark me-2 mb-2">Data Science</span>
+                        <span class="badge bg-light text-dark me-2 mb-2">Graphic Design</span>
+                        <span class="badge bg-light text-dark me-2 mb-2">Digital Marketing</span>
+                        <span class="badge bg-light text-dark me-2 mb-2">Business</span>
+                        <span class="badge bg-light text-dark me-2 mb-2">Photography</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image text-center">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800" alt="Online Learning" class="img-fluid rounded-4 shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-shape"></div>
+    </section>
+
+    <!-- Popular Courses Section -->
+    <section class="popular-courses py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold mb-3">Popular Courses</h2>
+                    <p class="text-muted">Explore our most popular courses loved by thousands of students</p>
+                </div>
+            </div>
+            <div class="row g-4" id="popularCourses">
+                <!-- Courses will be populated by JavaScript -->
+            </div>
+            <div class="text-center mt-5">
+                <a href="courses.html" class="btn btn-primary btn-lg">View All Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Instructors Section -->
+    <section class="trending-instructors py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold mb-3">Trending Instructors</h2>
+                    <p class="text-muted">Learn from the best instructors in the industry</p>
+                </div>
+            </div>
+            <div class="row g-4" id="trendingInstructors">
+                <!-- Instructors will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Testimonials -->
+    <section class="testimonials py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold mb-3">What Students Say</h2>
+                    <p class="text-muted">Hear from our successful students</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card card h-100 border-0 shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <div class="rating mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <p class="card-text flex-grow-1">"EduMaster has completely transformed my career. The courses are well-structured and the instructors are amazing!"</p>
+                            <div class="d-flex align-items-center mt-auto pt-3">
+                                <img src="https://ui-avatars.com/api/?name=Sarah+Johnson" alt="Sarah" class="rounded-circle me-3" width="50" height="50" style="object-fit: cover;">
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Sarah Johnson</h6>
+                                    <small class="text-muted">Web Developer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card card h-100 border-0 shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <div class="rating mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <p class="card-text flex-grow-1">"The best investment I've made in my professional development. Highly recommend to everyone!"</p>
+                            <div class="d-flex align-items-center mt-auto pt-3">
+                                <img src="https://ui-avatars.com/api/?name=Michael+Chen" alt="Michael" class="rounded-circle me-3" width="50" height="50" style="object-fit: cover;">
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Michael Chen</h6>
+                                    <small class="text-muted">Data Scientist</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card card h-100 border-0 shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <div class="rating mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-half text-warning"></i>
+                            </div>
+                            <p class="card-text flex-grow-1">"Excellent platform with quality content. The video playback is smooth and the learning experience is top-notch."</p>
+                            <div class="d-flex align-items-center mt-auto pt-3">
+                                <img src="https://ui-avatars.com/api/?name=Emily+Davis" alt="Emily" class="rounded-circle me-3" width="50" height="50" style="object-fit: cover;">
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Emily Davis</h6>
+                                    <small class="text-muted">UX Designer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Features -->
+    <section class="platform-features py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card text-center p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-laptop fs-1 text-primary"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Learn Anywhere</h5>
+                        <p class="text-muted">Access your courses from any device, anywhere, anytime. Learn at your own pace.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-award fs-1 text-primary"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Certificates</h5>
+                        <p class="text-muted">Earn verified certificates that you can share with employers and add to your LinkedIn profile.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-infinity fs-1 text-primary"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Lifetime Access</h5>
+                        <p class="text-muted">Once enrolled, get lifetime access to course materials, including future updates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <!-- Company Info -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-mortarboard-fill text-primary"></i> EduMaster
+                    </h5>
+                    <p class="text-muted mb-3">
+                        Empowering learners worldwide with quality education and skill development. Join millions of students learning new skills every day.
+                    </p>
+                    <div class="social-links mb-3">
+                        <a href="#" class="text-white me-3" aria-label="Facebook">
+                            <i class="bi bi-facebook fs-5"></i>
+                        </a>
+                        <a href="#" class="text-white me-3" aria-label="Twitter">
+                            <i class="bi bi-twitter fs-5"></i>
+                        </a>
+                        <a href="#" class="text-white me-3" aria-label="LinkedIn">
+                            <i class="bi bi-linkedin fs-5"></i>
+                        </a>
+                        <a href="#" class="text-white me-3" aria-label="Instagram">
+                            <i class="bi bi-instagram fs-5"></i>
+                        </a>
+                        <a href="#" class="text-white me-3" aria-label="YouTube">
+                            <i class="bi bi-youtube fs-5"></i>
+                        </a>
+                    </div>
+                    <div class="download-apps">
+                        <p class="small text-muted mb-2">Download Our App</p>
+                        <div class="d-flex gap-2">
+                            <a href="#" class="btn btn-sm btn-outline-light">
+                                <i class="bi bi-apple me-1"></i> App Store
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-light">
+                                <i class="bi bi-google-play me-1"></i> Play Store
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2">
+                            <a href="index.html" class="text-muted text-decoration-none">
+                                <i class="bi bi-chevron-right small me-1"></i>Home
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="courses.html" class="text-muted text-decoration-none">
+                                <i class="bi bi-chevron-right small me-1"></i>All Courses
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="instructors.html" class="text-muted text-decoration-none">
+                                <i class="bi bi-chevron-right small me-1"></i>Instructors
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="about.html" class="text-muted text-decoration-none">
+                                <i class="bi bi-chevron-right small me-1"></i>About Us
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="contact.html" class="text-muted text-decoration-none">
+                                <i class="bi bi-chevron-right small me-1"></i>Contact
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="faq.html" class="text-muted text-decoration-none">
+                                <i class="bi bi-chevron-right small me-1"></i>FAQ
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-3">Categories</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2">
+                            <a href="courses.html?category=web" class="text-muted text-decoration-none">
+                                <i class="bi bi-chevron-right small me-1"></i>Web Development
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="courses.html?category=design" class="text-muted text-decoration-none">
+                                <i class="bi bi-chevron-right small me-1"></i>Design
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="courses.html?category=business" class="text-muted text-decoration-none">
+                                <i class="bi bi-chevron-right small me-1"></i>Business
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="courses.html?category=marketing" class="text-muted text-decoration-none">
+                                <i class="bi bi-chevron-right small me-1"></i>Marketing
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="courses.html?category=data" class="text-muted text-decoration-none">
+                                <i class="bi bi-chevron-right small me-1"></i>Data Science
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="courses.html" class="text-muted text-decoration-none">
+                                <i class="bi bi-chevron-right small me-1"></i>View All
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-3">Resources</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2">
+                            <a href="student-dashboard.html" class="text-muted text-decoration-none">
+                                <i class="bi bi-chevron-right small me-1"></i>Student Dashboard
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="instructor-dashboard.html" class="text-muted text-decoration-none">
+                                <i class="bi bi-chevron-right small me-1"></i>Teach on EduMaster
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-muted text-decoration-none">
+                                <i class="bi bi-chevron-right small me-1"></i>Blog
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-muted text-decoration-none">
+                                <i class="bi bi-chevron-right small me-1"></i>Careers
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-muted text-decoration-none">
+                                <i class="bi bi-chevron-right small me-1"></i>Affiliate Program
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="admin-dashboard.html" class="text-muted text-decoration-none">
+                                <i class="bi bi-chevron-right small me-1"></i>Admin Portal
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Newsletter -->
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold mb-3">Get in Touch</h6>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2 text-muted">
+                            <i class="bi bi-geo-alt text-primary me-2"></i>
+                            123 Education Street, Learning City, LC 12345
+                        </li>
+                        <li class="mb-2">
+                            <a href="mailto:support@edumaster.com" class="text-muted text-decoration-none">
+                                <i class="bi bi-envelope text-primary me-2"></i>support@edumaster.com
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="tel:+15551234567" class="text-muted text-decoration-none">
+                                <i class="bi bi-phone text-primary me-2"></i>+1 (555) 123-4567
+                            </a>
+                        </li>
+                        <li class="mb-2 text-muted">
+                            <i class="bi bi-clock text-primary me-2"></i>Mon - Fri: 9:00 AM - 6:00 PM
+                        </li>
+                    </ul>
+
+                    <h6 class="fw-bold mb-3">Newsletter</h6>
+                    <p class="text-muted small mb-2">Subscribe to get updates on new courses and exclusive offers.</p>
+                    <form id="newsletterForm" class="mb-3">
+                        <div class="input-group input-group-sm">
+                            <input type="email" class="form-control" placeholder="Enter your email" required>
+                            <button class="btn btn-primary" type="submit">
+                                <i class="bi bi-send"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <p class="small text-muted mb-0">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </div>
+
+            <!-- Legal & Payment -->
+            <hr class="my-4 bg-secondary">
+            <div class="row g-3 align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="d-flex flex-wrap gap-3 footer-links">
+                        <a href="privacy.html" class="text-muted text-decoration-none small">Privacy Policy</a>
+                        <a href="terms.html" class="text-muted text-decoration-none small">Terms & Conditions</a>
+                        <a href="refund.html" class="text-muted text-decoration-none small">Refund Policy</a>
+                        <a href="contact.html" class="text-muted text-decoration-none small">Contact Us</a>
+                        <a href="faq.html" class="text-muted text-decoration-none small">FAQ</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 text-md-end">
+                    <div class="payment-methods mb-2">
+                        <span class="small text-muted me-2">We Accept:</span>
+                        <i class="bi bi-credit-card text-muted me-2" title="Credit Cards"></i>
+                        <i class="bi bi-paypal text-muted me-2" title="PayPal"></i>
+                        <i class="bi bi-wallet2 text-muted me-2" title="Digital Wallets"></i>
+                        <span class="badge bg-success small">Secure Payments</span>
+                    </div>
+                    <p class="small text-muted mb-0">
+                        &copy; 2025 EduMaster. All rights reserved.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="row mt-3">
+                <div class="col-12">
+                    <div class="text-center">
+                        <p class="small text-muted mb-1">
+                            <i class="bi bi-shield-check text-success me-1"></i>
+                            SSL Secured | 
+                            <i class="bi bi-award text-warning me-1"></i>
+                            Trusted by 5M+ Students | 
+                            <i class="bi bi-globe text-info me-1"></i>
+                            Available in 50+ Countries
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

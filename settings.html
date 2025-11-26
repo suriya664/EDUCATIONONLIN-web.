@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - EduMaster</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-mortarboard-fill text-primary"></i> EduMaster</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="student-dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="settings.html">Settings</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="cart.html" class="btn btn-link position-relative me-3">
+                        <i class="bi bi-cart3 fs-5"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">0</span>
+                    </a>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle me-1"></i> Student
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                            <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="index.html">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Settings Section -->
+    <div class="settings-container">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-lg-3 sidebar bg-light border-end">
+                    <div class="sidebar-content p-4">
+                        <div class="text-center mb-4">
+                            <a href="student-dashboard.html" class="btn btn-outline-primary btn-sm mb-3">
+                                <i class="bi bi-arrow-left me-1"></i>Back to Dashboard
+                            </a>
+                            <h5 class="fw-bold">Settings</h5>
+                        </div>
+                        <ul class="nav flex-column settings-nav">
+                            <li class="nav-item mb-2">
+                                <a class="nav-link active" href="#account" data-section="account">
+                                    <i class="bi bi-person me-2"></i>Account
+                                </a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a class="nav-link" href="#privacy" data-section="privacy">
+                                    <i class="bi bi-shield-lock me-2"></i>Privacy
+                                </a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a class="nav-link" href="#notifications" data-section="notifications">
+                                    <i class="bi bi-bell me-2"></i>Notifications
+                                </a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a class="nav-link" href="#security" data-section="security">
+                                    <i class="bi bi-key me-2"></i>Security
+                                </a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a class="nav-link" href="#preferences" data-section="preferences">
+                                    <i class="bi bi-sliders me-2"></i>Preferences
+                                </a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a class="nav-link" href="#billing" data-section="billing">
+                                    <i class="bi bi-credit-card me-2"></i>Billing
+                                </a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a class="nav-link" href="#appearance" data-section="appearance">
+                                    <i class="bi bi-palette me-2"></i>Appearance
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                    <div class="settings-content p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h3 class="fw-bold mb-0" id="settingsTitle">Account Settings</h3>
+                        </div>
+
+                        <div id="settingsSections">
+                            <!-- Account Settings -->
+                            <div class="settings-section active" id="account">
+                                <div class="card border-0 shadow-sm mb-4">
+                                    <div class="card-body p-4">
+                                        <h5 class="fw-bold mb-4">Account Information</h5>
+                                        <form id="accountForm">
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">First Name</label>
+                                                    <input type="text" class="form-control" id="accountFirstName" value="John">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Last Name</label>
+                                                    <input type="text" class="form-control" id="accountLastName" value="Doe">
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Email Address</label>
+                                                <input type="email" class="form-control" id="accountEmail" value="john.doe@example.com">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Username</label>
+                                                <input type="text" class="form-control" id="accountUsername" value="johndoe">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Language</label>
+                                                <select class="form-select" id="accountLanguage">
+                                                    <option value="en" selected>English</option>
+                                                    <option value="es">Spanish</option>
+                                                    <option value="fr">French</option>
+                                                    <option value="de">German</option>
+                                                    <option value="zh">Chinese</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Time Zone</label>
+                                                <select class="form-select" id="accountTimezone">
+                                                    <option value="UTC-5" selected>Eastern Time (UTC-5)</option>
+                                                    <option value="UTC-6">Central Time (UTC-6)</option>
+                                                    <option value="UTC-7">Mountain Time (UTC-7)</option>
+                                                    <option value="UTC-8">Pacific Time (UTC-8)</option>
+                                                    <option value="UTC+0">GMT (UTC+0)</option>
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <h5 class="fw-bold mb-4">Account Deletion</h5>
+                                        <p class="text-muted mb-3">Once you delete your account, there is no going back. Please be certain.</p>
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
+                                            Delete Account
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Privacy Settings -->
+                            <div class="settings-section d-none" id="privacy">
+                                <div class="card border-0 shadow-sm mb-4">
+                                    <div class="card-body p-4">
+                                        <h5 class="fw-bold mb-4">Privacy Controls</h5>
+                                        <form id="privacyForm">
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="profileVisibility" checked>
+                                                <label class="form-check-label" for="profileVisibility">
+                                                    Make profile public
+                                                </label>
+                                                <small class="d-block text-muted">Allow others to view your profile</small>
+                                            </div>
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="showEmail" checked>
+                                                <label class="form-check-label" for="showEmail">
+                                                    Show email address
+                                                </label>
+                                                <small class="d-block text-muted">Display your email on your public profile</small>
+                                            </div>
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="activityStatus" checked>
+                                                <label class="form-check-label" for="activityStatus">
+                                                    Show activity status
+                                                </label>
+                                                <small class="d-block text-muted">Let others see when you're online</small>
+                                            </div>
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="courseProgress" checked>
+                                                <label class="form-check-label" for="courseProgress">
+                                                    Show course progress
+                                                </label>
+                                                <small class="d-block text-muted">Display your learning progress publicly</small>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Data Sharing</label>
+                                                <select class="form-select" id="dataSharing">
+                                                    <option value="none">Don't share any data</option>
+                                                    <option value="anonymous" selected>Share anonymous data</option>
+                                                    <option value="all">Share all data</option>
+                                                </select>
+                                                <small class="text-muted">Help us improve by sharing usage data</small>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Save Privacy Settings</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Notifications Settings -->
+                            <div class="settings-section d-none" id="notifications">
+                                <div class="card border-0 shadow-sm mb-4">
+                                    <div class="card-body p-4">
+                                        <h5 class="fw-bold mb-4">Email Notifications</h5>
+                                        <form id="emailNotificationsForm">
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="emailCourseUpdates" checked>
+                                                <label class="form-check-label" for="emailCourseUpdates">
+                                                    Course updates
+                                                </label>
+                                                <small class="d-block text-muted">Get notified about new content in your courses</small>
+                                            </div>
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="emailAchievements" checked>
+                                                <label class="form-check-label" for="emailAchievements">
+                                                    Achievements & badges
+                                                </label>
+                                                <small class="d-block text-muted">Receive emails when you earn achievements</small>
+                                            </div>
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="emailMarketing">
+                                                <label class="form-check-label" for="emailMarketing">
+                                                    Marketing emails
+                                                </label>
+                                                <small class="d-block text-muted">Receive promotional emails and course recommendations</small>
+                                            </div>
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="emailWeekly" checked>
+                                                <label class="form-check-label" for="emailWeekly">
+                                                    Weekly digest
+                                                </label>
+                                                <small class="d-block text-muted">Get a weekly summary of your activity</small>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Save Email Settings</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <h5 class="fw-bold mb-4">In-App Notifications</h5>
+                                        <form id="appNotificationsForm">
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="appCourseUpdates" checked>
+                                                <label class="form-check-label" for="appCourseUpdates">
+                                                    Course updates
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="appMessages" checked>
+                                                <label class="form-check-label" for="appMessages">
+                                                    Messages
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="appAnnouncements" checked>
+                                                <label class="form-check-label" for="appAnnouncements">
+                                                    Announcements
+                                                </label>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Save Notification Settings</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Security Settings -->
+                            <div class="settings-section d-none" id="security">
+                                <div class="card border-0 shadow-sm mb-4">
+                                    <div class="card-body p-4">
+                                        <h5 class="fw-bold mb-4">Change Password</h5>
+                                        <form id="passwordForm">
+                                            <div class="mb-3">
+                                                <label class="form-label">Current Password</label>
+                                                <input type="password" class="form-control" id="currentPassword" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">New Password</label>
+                                                <input type="password" class="form-control" id="newPassword" required>
+                                                <small class="text-muted">Must be at least 8 characters long</small>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Confirm New Password</label>
+                                                <input type="password" class="form-control" id="confirmPassword" required>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Change Password</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="card border-0 shadow-sm mb-4">
+                                    <div class="card-body p-4">
+                                        <h5 class="fw-bold mb-4">Two-Factor Authentication</h5>
+                                        <p class="text-muted mb-3">Add an extra layer of security to your account</p>
+                                        <div class="form-check form-switch mb-3">
+                                            <input class="form-check-input" type="checkbox" id="twoFactorAuth">
+                                            <label class="form-check-label" for="twoFactorAuth">
+                                                Enable Two-Factor Authentication
+                                            </label>
+                                        </div>
+                                        <button type="button" class="btn btn-outline-primary">Set Up 2FA</button>
+                                    </div>
+                                </div>
+
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <h5 class="fw-bold mb-4">Active Sessions</h5>
+                                        <div class="session-item mb-3 p-3 border rounded">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="mb-1">Current Session</h6>
+                                                    <small class="text-muted">Chrome on Windows • New York, USA</small>
+                                                    <small class="d-block text-muted">Last active: Just now</small>
+                                                </div>
+                                                <span class="badge bg-success">Active</span>
+                                            </div>
+                                        </div>
+                                        <div class="session-item mb-3 p-3 border rounded">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="mb-1">Mobile Device</h6>
+                                                    <small class="text-muted">Safari on iOS • New York, USA</small>
+                                                    <small class="d-block text-muted">Last active: 2 hours ago</small>
+                                                </div>
+                                                <button class="btn btn-sm btn-outline-danger">Revoke</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Preferences Settings -->
+                            <div class="settings-section d-none" id="preferences">
+                                <div class="card border-0 shadow-sm mb-4">
+                                    <div class="card-body p-4">
+                                        <h5 class="fw-bold mb-4">Learning Preferences</h5>
+                                        <form id="preferencesForm">
+                                            <div class="mb-3">
+                                                <label class="form-label">Default Video Quality</label>
+                                                <select class="form-select" id="videoQuality">
+                                                    <option value="auto" selected>Auto</option>
+                                                    <option value="1080p">1080p</option>
+                                                    <option value="720p">720p</option>
+                                                    <option value="480p">480p</option>
+                                                    <option value="360p">360p</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Playback Speed</label>
+                                                <select class="form-select" id="playbackSpeed">
+                                                    <option value="0.5">0.5x</option>
+                                                    <option value="0.75">0.75x</option>
+                                                    <option value="1" selected>1x (Normal)</option>
+                                                    <option value="1.25">1.25x</option>
+                                                    <option value="1.5">1.5x</option>
+                                                    <option value="2">2x</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="autoPlay" checked>
+                                                <label class="form-check-label" for="autoPlay">
+                                                    Auto-play next lesson
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="subtitles">
+                                                <label class="form-check-label" for="subtitles">
+                                                    Enable subtitles by default
+                                                </label>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Download Quality</label>
+                                                <select class="form-select" id="downloadQuality">
+                                                    <option value="720p" selected>720p</option>
+                                                    <option value="1080p">1080p</option>
+                                                    <option value="480p">480p</option>
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Save Preferences</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Billing Settings -->
+                            <div class="settings-section d-none" id="billing">
+                                <div class="card border-0 shadow-sm mb-4">
+                                    <div class="card-body p-4">
+                                        <h5 class="fw-bold mb-4">Payment Methods</h5>
+                                        <div class="payment-method-item mb-3 p-3 border rounded">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <i class="bi bi-credit-card me-2"></i>
+                                                    <strong>•••• •••• •••• 4242</strong>
+                                                    <small class="d-block text-muted">Expires 12/25</small>
+                                                </div>
+                                                <div>
+                                                    <span class="badge bg-primary me-2">Default</span>
+                                                    <button class="btn btn-sm btn-outline-danger">Remove</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addPaymentModal">
+                                            <i class="bi bi-plus me-2"></i>Add Payment Method
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="card border-0 shadow-sm mb-4">
+                                    <div class="card-body p-4">
+                                        <h5 class="fw-bold mb-4">Billing History</h5>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Date</th>
+                                                        <th>Description</th>
+                                                        <th>Amount</th>
+                                                        <th>Status</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Jan 15, 2025</td>
+                                                        <td>Web Development Bootcamp</td>
+                                                        <td>$49.99</td>
+                                                        <td><span class="badge bg-success">Paid</span></td>
+                                                        <td><a href="#" class="text-primary">Download</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Dec 20, 2024</td>
+                                                        <td>Advanced JavaScript Course</td>
+                                                        <td>$29.99</td>
+                                                        <td><span class="badge bg-success">Paid</span></td>
+                                                        <td><a href="#" class="text-primary">Download</a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Appearance Settings -->
+                            <div class="settings-section d-none" id="appearance">
+                                <div class="card border-0 shadow-sm mb-4">
+                                    <div class="card-body p-4">
+                                        <h5 class="fw-bold mb-4">Theme Settings</h5>
+                                        <form id="appearanceForm">
+                                            <div class="mb-4">
+                                                <label class="form-label mb-3">Theme</label>
+                                                <div class="d-flex gap-3">
+                                                    <div class="theme-option">
+                                                        <input type="radio" class="btn-check" name="theme" id="themeLight" value="light" checked>
+                                                        <label class="btn btn-outline-primary" for="themeLight">
+                                                            <i class="bi bi-sun fs-4 d-block mb-2"></i>
+                                                            Light
+                                                        </label>
+                                                    </div>
+                                                    <div class="theme-option">
+                                                        <input type="radio" class="btn-check" name="theme" id="themeDark" value="dark">
+                                                        <label class="btn btn-outline-primary" for="themeDark">
+                                                            <i class="bi bi-moon fs-4 d-block mb-2"></i>
+                                                            Dark
+                                                        </label>
+                                                    </div>
+                                                    <div class="theme-option">
+                                                        <input type="radio" class="btn-check" name="theme" id="themeAuto" value="auto">
+                                                        <label class="btn btn-outline-primary" for="themeAuto">
+                                                            <i class="bi bi-circle-half fs-4 d-block mb-2"></i>
+                                                            Auto
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Font Size</label>
+                                                <select class="form-select" id="fontSize">
+                                                    <option value="small">Small</option>
+                                                    <option value="medium" selected>Medium</option>
+                                                    <option value="large">Large</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="animations" checked>
+                                                <label class="form-check-label" for="animations">
+                                                    Enable animations
+                                                </label>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Save Appearance Settings</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Account Modal -->
+    <div class="modal fade" id="deleteAccountModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Delete Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+                    <p class="text-danger">All your data, courses, and progress will be permanently deleted.</p>
+                    <div class="mb-3">
+                        <label class="form-label">Type "DELETE" to confirm</label>
+                        <input type="text" class="form-control" id="deleteConfirm" placeholder="DELETE">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>

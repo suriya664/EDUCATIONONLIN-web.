@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Player - EduMaster</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/player.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark shadow-sm fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold text-white" href="index.html">
+                <i class="bi bi-mortarboard-fill text-primary"></i> EduMaster
+            </a>
+            <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="student-dashboard.html">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Player Section -->
+    <div class="player-container" style="margin-top: 56px;">
+        <div class="row g-0">
+            <!-- Video Player -->
+            <div class="col-lg-9">
+                <div class="video-container bg-black">
+                    <div class="ratio ratio-16x9">
+                        <video id="courseVideo" class="w-100" controls>
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-controls p-3 bg-dark text-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="mb-0" id="currentLectureTitle">Introduction to HTML</h5>
+                                <small class="text-muted">Complete Web Development Bootcamp</small>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-light" id="prevBtn">
+                                    <i class="bi bi-skip-backward"></i> Previous
+                                </button>
+                                <button class="btn btn-sm btn-primary" id="nextBtn">
+                                    Next <i class="bi bi-skip-forward"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Info Tabs -->
+                <div class="course-info p-4 bg-white">
+                    <ul class="nav nav-tabs mb-3" id="infoTabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#overview">Overview</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#notes">Notes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#resources">Resources</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#discussion">Discussion</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="overview">
+                            <h6 class="fw-bold mb-2">About this lecture</h6>
+                            <p>In this lecture, we'll cover the fundamentals of HTML, including tags, elements, and basic structure.</p>
+                        </div>
+                        <div class="tab-pane fade" id="notes">
+                            <h6 class="fw-bold mb-3">My Notes</h6>
+                            <textarea class="form-control mb-3" rows="5" placeholder="Add your notes here..."></textarea>
+                            <button class="btn btn-primary">Save Notes</button>
+                        </div>
+                        <div class="tab-pane fade" id="resources">
+                            <h6 class="fw-bold mb-3">Resources</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <i class="bi bi-file-pdf text-danger me-2"></i>
+                                    <a href="#" class="text-decoration-none">HTML Cheat Sheet.pdf</a>
+                                    <button class="btn btn-sm btn-outline-primary float-end">Download</button>
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="bi bi-link-45deg text-primary me-2"></i>
+                                    <a href="#" class="text-decoration-none">HTML Documentation</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="discussion">
+                            <h6 class="fw-bold mb-3">Discussion</h6>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="2" placeholder="Ask a question..."></textarea>
+                                <button class="btn btn-primary btn-sm mt-2">Post</button>
+                            </div>
+                            <div class="discussion-item border-bottom pb-3 mb-3">
+                                <div class="d-flex">
+                                    <img src="https://ui-avatars.com/api/?name=John+Doe&size=40" alt="User" class="rounded-circle me-2">
+                                    <div>
+                                        <strong>John Doe</strong>
+                                        <small class="text-muted ms-2">2 hours ago</small>
+                                        <p class="mb-0 mt-1">Great explanation! This helped me understand the concept better.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lecture Sidebar -->
+            <div class="col-lg-3 sidebar-lectures bg-light">
+                <div class="p-3">
+                    <h6 class="fw-bold mb-3">Course Content</h6>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 65%">65% Complete</div>
+                    </div>
+                    <div class="accordion" id="courseSections">
+                        <div class="accordion-item border-0 mb-2">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#section1">
+                                    <div>
+                                        <div class="fw-bold small">Section 1: Introduction</div>
+                                        <small class="text-muted">5 lectures • 45 min</small>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="section1" class="accordion-collapse collapse show">
+                                <div class="accordion-body p-0">
+                                    <div class="list-group list-group-flush">
+                                        <a href="#" class="list-group-item list-group-item-action active lecture-item" data-lecture="1">
+                                            <div class="d-flex justify-content-between">
+                                                <span><i class="bi bi-play-circle me-2"></i>Course Introduction</span>
+                                                <span class="badge bg-success"><i class="bi bi-check"></i></span>
+                                            </div>
+                                            <small class="text-muted d-block mt-1">8:30</small>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action lecture-item" data-lecture="2">
+                                            <div class="d-flex justify-content-between">
+                                                <span><i class="bi bi-play-circle me-2"></i>How to Get Help</span>
+                                                <span class="badge bg-success"><i class="bi bi-check"></i></span>
+                                            </div>
+                                            <small class="text-muted d-block mt-1">5:15</small>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action lecture-item" data-lecture="3">
+                                            <div class="d-flex justify-content-between">
+                                                <span><i class="bi bi-lock me-2"></i>HTML Basics</span>
+                                            </div>
+                                            <small class="text-muted d-block mt-1">15:20</small>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 mb-2">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#section2">
+                                    <div>
+                                        <div class="fw-bold small">Section 2: HTML Fundamentals</div>
+                                        <small class="text-muted">12 lectures • 2 hours</small>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="section2" class="accordion-collapse collapse">
+                                <div class="accordion-body p-0">
+                                    <div class="list-group list-group-flush">
+                                        <a href="#" class="list-group-item list-group-item-action lecture-item" data-lecture="4">
+                                            <span><i class="bi bi-lock me-2"></i>HTML Forms</span>
+                                            <small class="text-muted d-block mt-1">20:10</small>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/player.js"></script>
+</body>
+</html>
+
